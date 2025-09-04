@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$(".disappear").hide();
-	$("#que1").click(function() {
+	$("button").click(function() {
 		$(".disappear").toggle();
 	});
 });
