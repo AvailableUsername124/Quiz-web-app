@@ -2,6 +2,9 @@ $(document).ready(function() {
 	$("#answ1").hide();
 	$("#check1").click(function() {
 		$("#answ1").show();
+		if($username.parent('label').hasId('answ1')) {
+			$('#answ1').text('Correct!');
+		}
 	});
 	$("#answ2").hide();
 	$("#check2").click(function() {
