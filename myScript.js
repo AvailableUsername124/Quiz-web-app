@@ -1,9 +1,11 @@
 $(document).ready(function() {
-	$("#answ1").hide();
 	$("#check1").click(function() {
-		$("#answ1").show();
-		if($username.parent('label').hasId('answ1')) {
-			$('#answ1').text('Correct!');
+		const userAnswer = $("#answerBox1").val().trim().toLowerCase();
+		const correctAnswer = "1776";
+		if (userAnswer === correctAnswer) {
+			$("#resultMessage1").text("Correct!").css("color", "green");
+		} else {
+			$("#resultMessage1").text("Incorrect, try again.").css("color", "red");
 		}
 	});
 	$("#answ2").hide();
@@ -19,28 +21,27 @@ $(document).ready(function() {
 		$("#answ4").show();
 	});
 
-var input = document.getElementById("answer box1");
-input.addEventListener("keypress", function(event) {
+$("#answerBox1").on("keypress", function(event) {
   if (event.key === "Enter") {
     event.preventDefault();
-    document.getElementById("check1").click();
+    $("#check1").click();
   }
 });
-var input = document.getElementById("answer box2");
+var input = document.getElementById("answerbox2");
 input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
     event.preventDefault();
     document.getElementById("check2").click();
   }
 });
-var input = document.getElementById("answer box3");
+var input = document.getElementById("answerbox3");
 input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
     event.preventDefault();
     document.getElementById("check3").click();
   }
 });
-var input = document.getElementById("answer box4");
+var input = document.getElementById("answerbox4");
 input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
     event.preventDefault();
@@ -50,4 +51,4 @@ input.addEventListener("keypress", function(event) {
 
 });
 
-	
+
