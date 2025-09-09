@@ -31,28 +31,31 @@ $(document).ready(function() {
 	
 	$("#check4").click(function() {
 		const userAnswer = $("#answerbox4").val().trim().toLowerCase();
-		const correctAnswer = "1775-1783";
-		if (userAnswer === correctAnswer) {
+		const correctAnswers = ["1775-1783", "1775 and 1783", "1775 - 1783", "1775 to 1783", "1775 1783", "1775,1783", "1775, 1783"];
+		if (correctAnswers.includes(userAnswer)) {
 			$("#resultMessage4").text("Correct!").css("color", "green");
 		} else {
 			$("#resultMessage4").text("Incorrect, the answer is 1775-1783.").css("color", "red");
 		}
 	});
 	
-$("#answerBox1").on("keypress", function(event) {
+var input = document.getElementById("answerBox1");
+input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
     event.preventDefault();
-    $("#check1").click();
+    document.getElementById("check1").click();
   }
+  
 });
+
 var input = document.getElementById("answerbox2");
 input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
     event.preventDefault();
     document.getElementById("check2").click();
   }
-  
 });
+
 var input = document.getElementById("answerbox3");
 input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
@@ -61,6 +64,7 @@ input.addEventListener("keypress", function(event) {
   }
   
 });
+
 var input = document.getElementById("answerbox4");
 input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
